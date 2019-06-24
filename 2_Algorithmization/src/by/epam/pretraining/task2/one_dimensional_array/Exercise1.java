@@ -1,9 +1,5 @@
 package by.epam.pretraining.task2.one_dimensional_array;
 
-
-
-import static java.lang.Integer.MAX_VALUE;
-
 public class Exercise1 {
 
 //    В массив А [N] занесены натуральные числа. Найти сумму тех элементов, которые кратны данному К.

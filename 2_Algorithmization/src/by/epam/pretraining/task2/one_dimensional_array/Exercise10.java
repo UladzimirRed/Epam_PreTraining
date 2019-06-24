@@ -9,7 +9,7 @@ public class Exercise10 {
         int n = 30;
         int[] array = new int[n];
 
-        initialize(array, 11);
+        initialize(array, 10);
         System.out.print("Array is: ");
         print(array);
         compressArray(array);
@@ -20,10 +20,10 @@ public class Exercise10 {
 
     private static void initialize(int[] array, int range) {
 
-        Random random = new Random(range);
+        Random random = new Random();
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(range);
+            array[i] = random.nextInt(range + 1);
         }
     }
 
@@ -39,4 +39,5 @@ public class Exercise10 {
             array[i] = 0;
         }
     }
+
 }
