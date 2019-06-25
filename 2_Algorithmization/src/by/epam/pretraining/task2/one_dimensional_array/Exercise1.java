@@ -1,8 +1,10 @@
 package by.epam.pretraining.task2.one_dimensional_array;
 
-public class Exercise1 {
 
 //    В массив А [N] занесены натуральные числа. Найти сумму тех элементов, которые кратны данному К.
+
+
+public class Exercise1 {
 
     public static void run (){
 

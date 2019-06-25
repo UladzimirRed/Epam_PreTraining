@@ -16,8 +16,7 @@ public class Exercise2 {
         int[][] matrix;
         int range = 10;
         matrix = initialize(range);
-        System.out.println("Our matrix is: ");
-        print(matrix);
+        printMatrix(matrix);
         printItemsDiagonally(matrix);
 
 
@@ -39,7 +38,6 @@ public class Exercise2 {
 
         m = scanner.nextInt();
 
-
         int[][] matrix = new int[m][m];
 
         Random random = new Random();
@@ -53,7 +51,9 @@ public class Exercise2 {
         return matrix;
     }
 
-    private static void print(int[][] matrix) {
+    private static void printMatrix(int[][] matrix) {
+
+        System.out.println("Our matrix is: ");
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
@@ -75,7 +75,7 @@ public class Exercise2 {
         for (int i = 0; i < matrix.length; i++) {
             System.out.print(matrix[i][matrix.length - 1 - i] + " ");
         }
+        System.out.println("\n------------------------");
     }
-
 
 }

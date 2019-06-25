@@ -2,26 +2,32 @@ package by.epam.pretraining.task2.multidimensional_array;
 
 
 /*
- * Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+ * В числовой матрице поменять местами два любых столбца, т.е. все элементы
+ * одного столбца поставить на соответствующие им позиции другого, а элементы
+ * второго переместить в первый. Номера столбцов вводит пользователь с клавиатуры.
  */
 
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercise3 {
+public class Exercise8 {
 
     public static void run() {
 
         int[][] matrix;
+        int[][] replacedMatrix;
         int range = 10;
         matrix = initialize(range);
+        System.out.println("Our matrix is: ");
         printMatrix(matrix);
-        int k = defineLine(matrix);
-        int p = defineColumn(matrix);
-        printSpecificLineAndColumn(matrix, k, p);
+        replacedMatrix = replaceColumnItems(matrix);
+        System.out.println("The result of the program: ");
+        printMatrix(replacedMatrix);
+        System.out.println("------------------------");
 
     }
+
 
     private static int[][] initialize(int range) {
 
@@ -55,8 +61,6 @@ public class Exercise3 {
 
     private static void printMatrix(int[][] matrix) {
 
-        System.out.println("Our matrix is: ");
-
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 System.out.print(matrix[i][j] + "\t");
@@ -66,59 +70,36 @@ public class Exercise3 {
 
     }
 
-    private static int defineLine(int matrix[][]) {
+    private static int[][] replaceColumnItems(int[][] matrix) {
 
-        int k;
-
-        @SuppressWarnings("resource")
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter the line number k to display (one int numbers):");
-
-        while (!scanner.hasNextInt() || (k = scanner.nextInt()) > matrix.length || (k <= 0)) {
-            scanner.nextLine();
-            System.out.println("Please enter only INTEGER number in the range from 1 to " + matrix.length);
-        }
-
-        return k;
-
-    }
-
-    private static int defineColumn(int matrix[][]) {
-
-        int p;
+        int a;
+        int b;
+        int temp;
 
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the column number p to display (one int numbers):");
+        System.out.println("Enter first column number that need to be swapped (one integer int number)");
 
-        while (!scanner.hasNextInt() || (p = scanner.nextInt()) > matrix.length || (p <= 0)) {
+        while (!scanner.hasNextInt() || (a = scanner.nextInt() - 1) >= matrix.length || a < 0) {
             scanner.nextLine();
             System.out.println("Please enter only INTEGER number in the range from 1 to " + matrix.length);
         }
 
-        return p;
+        System.out.println("Enter second column number that need to be swapped (one integer int number)");
 
-    }
+        while (!scanner.hasNextInt() || (b = scanner.nextInt() - 1) >= matrix.length || b < 0) {
+            scanner.nextLine();
+            System.out.println("Please enter only INTEGER number in the range from 1 to " + matrix.length);
+        }
 
-
-    private static void printSpecificLineAndColumn(int[][] matrix, int k, int p) {
-
-        System.out.print("Line #" + k + " is: ");
         for (int i = 0; i < matrix.length; i++) {
-            System.out.print(matrix[k - 1][i] + " ");
+            temp = matrix[i][a];
+            matrix[i][a] = matrix[i][b];
+            matrix[i][b] = temp;
         }
 
-        System.out.print("\nColumn #" + p + " is: ");
-        for (int j = 0; j < matrix.length; j++) {
-            System.out.print(matrix[j][p - 1] + " ");
-        }
-
-        System.out.println("\n------------------------");
+        return matrix;
 
     }
-
 }
-
-

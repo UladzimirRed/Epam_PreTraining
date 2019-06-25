@@ -2,30 +2,30 @@ package by.epam.pretraining.task2.multidimensional_array;
 
 
 /*
- * Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент больше последнего.
+ *  Задана матрица неотрицательных чисел.
+ *  Посчитать сумму элементов в каждом столбце.
+ *  Определить, какой столбец содержит максимальную сумму.
  */
 
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercise1 {
+public class Exercise9 {
 
     public static void run() {
 
         int[][] matrix;
-        int range = 10; // заполняем матрицу числами от 0 до range;
-
+        int range = 100;
         matrix = initialize(range);
         printMatrix(matrix);
-        printColumnsByCondition(matrix);
+        findSumOfItemsInEachColumn(matrix);
 
     }
 
     private static int[][] initialize(int range) {
 
         int m;
-        int n;
 
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
@@ -36,19 +36,21 @@ public class Exercise1 {
             scanner.next();
             System.out.println("Please enter INTEGER number");
         }
-        n = scanner.nextInt();
 
-        int[][] matrix = new int[n][n];
+        m = scanner.nextInt();
+
+        int[][] matrix = new int[m][m];
 
         Random random = new Random();
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(range + 1);
+                matrix[i][j] = random.nextInt(range) + 1;
             }
         }
 
         return matrix;
+
     }
 
     private static void printMatrix(int[][] matrix) {
@@ -64,21 +66,27 @@ public class Exercise1 {
 
     }
 
-    private static void printColumnsByCondition(int[][] matrix) {
+    private static void findSumOfItemsInEachColumn(int[][] matrix) {
 
-        System.out.println("Print columns by condition: ");
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j += 2) {
-                if (matrix[0][j] > matrix[matrix.length - 1][j]) {
-                    System.out.print(matrix[i][j] + "\t");
-                }
+        int maxColumn = 1;
+        int maxSum = 0;
+        int sum = 0;
+        for (int j = 0; j < matrix[0].length; j++) {
+            for (int i = 0; i < matrix.length; i++) {
+                sum += matrix[i][j];
             }
-
+            System.out.println("Sum of items in column #" +  (j + 1) + ": " + sum);
+            if (sum > maxSum) {
+                maxSum = sum;
+                maxColumn = j + 1;
+            }
+            sum = 0;
         }
 
-        System.out.println("\n------------------------");
+        System.out.println("Column #" + maxColumn + " contains the maximum sum.");
+        System.out.println("------------------------");
 
     }
 
 }
+
