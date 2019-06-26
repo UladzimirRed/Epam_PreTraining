@@ -43,8 +43,21 @@ public class Main {
 //        by.epam.pretraining.task2.multidimensional_array.Exercise7.run();
 //        System.out.println("Task 2.8 ");
 //        by.epam.pretraining.task2.multidimensional_array.Exercise8.run();
-        System.out.println("Task 2.9 ");
-        by.epam.pretraining.task2.multidimensional_array.Exercise9.run();
-
+//        System.out.println("Task 2.9 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise9.run();
+//        System.out.println("Task 2.10 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise10.run();
+//        System.out.println("Task 2.11 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise11.run();
+//        System.out.println("Task 2.12 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise12.run();
+//        System.out.println("Task 2.13 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise13.run();
+//        System.out.println("Task 2.14 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise14.run();
+//        System.out.println("Task 2.15 ");
+//        by.epam.pretraining.task2.multidimensional_array.Exercise15.run();
+        System.out.println("Task 2.16 ");
+        by.epam.pretraining.task2.multidimensional_array.Exercise16.run();
     }
 }

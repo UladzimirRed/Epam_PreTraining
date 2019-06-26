@@ -11,18 +11,19 @@ import java.util.Scanner;
 
 public class Exercise1 {
 
+    private static int[][] matrix;
+    private static int range = 10; // заполняем матрицу числами от 0 до range;
+
+
     public static void run() {
 
-        int[][] matrix;
-        int range = 10; // заполняем матрицу числами от 0 до range;
-
-        matrix = initialize(range);
-        printMatrix(matrix);
-        printColumnsByCondition(matrix);
+        matrix = initialize();
+        printMatrix();
+        printColumnsByCondition();
 
     }
 
-    private static int[][] initialize(int range) {
+    private static int[][] initialize() {
 
         int m;
         int n;
@@ -30,15 +31,21 @@ public class Exercise1 {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter matrix size (one int number)");
+        System.out.println("Enter matrix size (first int number)");
 
-        while (!scanner.hasNextInt()) {
-            scanner.next();
-            System.out.println("Please enter INTEGER number");
+        while (!scanner.hasNextInt() || (m = scanner.nextInt()) <= 0) {
+            scanner.nextLine();
+            System.out.println("Please enter positive INTEGER number");
         }
-        n = scanner.nextInt();
 
-        int[][] matrix = new int[n][n];
+        System.out.println("Enter matrix size (second int number)");
+
+        while (!scanner.hasNextInt() || (n = scanner.nextInt()) <= 0) {
+            scanner.nextLine();
+            System.out.println("Please enter positive INTEGER number");
+        }
+
+        matrix = new int[m][n];
 
         Random random = new Random();
 
@@ -51,12 +58,12 @@ public class Exercise1 {
         return matrix;
     }
 
-    private static void printMatrix(int[][] matrix) {
+    private static void printMatrix() {
 
         System.out.println("Our matrix is: ");
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();
@@ -64,7 +71,7 @@ public class Exercise1 {
 
     }
 
-    private static void printColumnsByCondition(int[][] matrix) {
+    private static void printColumnsByCondition() {
 
         System.out.println("Print columns by condition: ");
 
@@ -74,10 +81,11 @@ public class Exercise1 {
                     System.out.print(matrix[i][j] + "\t");
                 }
             }
+            System.out.print("\n");
 
         }
 
-        System.out.println("\n------------------------");
+        System.out.println("------------------------");
 
     }
 

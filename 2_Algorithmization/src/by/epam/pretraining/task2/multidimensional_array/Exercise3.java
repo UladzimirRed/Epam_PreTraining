@@ -11,19 +11,21 @@ import java.util.Scanner;
 
 public class Exercise3 {
 
+    private static int[][] matrix;
+    private static int range = 10;
+
+
     public static void run() {
 
-        int[][] matrix;
-        int range = 10;
-        matrix = initialize(range);
-        printMatrix(matrix);
-        int k = defineLine(matrix);
-        int p = defineColumn(matrix);
-        printSpecificLineAndColumn(matrix, k, p);
+        matrix = initialize();
+        printMatrix();
+        int k = defineLine();
+        int p = defineColumn();
+        printSpecificLineAndColumn(k, p);
 
     }
 
-    private static int[][] initialize(int range) {
+    private static int[][] initialize() {
 
         int m;
 
@@ -32,14 +34,12 @@ public class Exercise3 {
 
         System.out.println("Enter matrix size (one int number)");
 
-        while (!scanner.hasNextInt()) {
-            scanner.next();
-            System.out.println("Please enter INTEGER number");
+        while (!scanner.hasNextInt() || (m = scanner.nextInt()) <= 0) {
+            scanner.nextLine();
+            System.out.println("Please enter POSITIVE INTEGER number");
         }
 
-        m = scanner.nextInt();
-
-        int[][] matrix = new int[m][m];
+        matrix = new int[m][m];
 
         Random random = new Random();
 
@@ -53,12 +53,12 @@ public class Exercise3 {
 
     }
 
-    private static void printMatrix(int[][] matrix) {
+    private static void printMatrix() {
 
         System.out.println("Our matrix is: ");
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();
@@ -66,7 +66,7 @@ public class Exercise3 {
 
     }
 
-    private static int defineLine(int matrix[][]) {
+    private static int defineLine() {
 
         int k;
 
@@ -84,7 +84,7 @@ public class Exercise3 {
 
     }
 
-    private static int defineColumn(int matrix[][]) {
+    private static int defineColumn() {
 
         int p;
 
@@ -103,7 +103,7 @@ public class Exercise3 {
     }
 
 
-    private static void printSpecificLineAndColumn(int[][] matrix, int k, int p) {
+    private static void printSpecificLineAndColumn(int k, int p) {
 
         System.out.print("Line #" + k + " is: ");
         for (int i = 0; i < matrix.length; i++) {

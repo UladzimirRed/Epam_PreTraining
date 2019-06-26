@@ -13,15 +13,17 @@ import java.util.Scanner;
 
 public class Exercise8 {
 
+    private static int[][] matrix;
+    private static int[][] replacedMatrix;
+    private static int range = 10;
+
+
     public static void run() {
 
-        int[][] matrix;
-        int[][] replacedMatrix;
-        int range = 10;
-        matrix = initialize(range);
+        matrix = initialize();
         System.out.println("Our matrix is: ");
         printMatrix(matrix);
-        replacedMatrix = replaceColumnItems(matrix);
+        replacedMatrix = replaceColumnItems();
         System.out.println("The result of the program: ");
         printMatrix(replacedMatrix);
         System.out.println("------------------------");
@@ -29,23 +31,29 @@ public class Exercise8 {
     }
 
 
-    private static int[][] initialize(int range) {
+    private static int[][] initialize() {
 
         int m;
+        int n;
 
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter matrix size (one int number)");
+        System.out.println("Enter matrix size (first int number)");
 
-        while (!scanner.hasNextInt()) {
-            scanner.next();
-            System.out.println("Please enter INTEGER number");
+        while (!scanner.hasNextInt() || (m = scanner.nextInt()) <= 0) {
+            scanner.nextLine();
+            System.out.println("Please enter positive INTEGER number");
         }
 
-        m = scanner.nextInt();
+        System.out.println("Enter matrix size (second int number)");
 
-        int[][] matrix = new int[m][m];
+        while (!scanner.hasNextInt() || (n = scanner.nextInt()) <= 0) {
+            scanner.nextLine();
+            System.out.println("Please enter positive INTEGER number");
+        }
+
+        matrix = new int[m][n];
 
         Random random = new Random();
 
@@ -62,7 +70,7 @@ public class Exercise8 {
     private static void printMatrix(int[][] matrix) {
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();
@@ -70,7 +78,7 @@ public class Exercise8 {
 
     }
 
-    private static int[][] replaceColumnItems(int[][] matrix) {
+    private static int[][] replaceColumnItems() {
 
         int a;
         int b;

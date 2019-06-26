@@ -2,26 +2,29 @@ package by.epam.pretraining.task2.multidimensional_array;
 
 
 /*
- *  Задана матрица неотрицательных чисел.
- *  Посчитать сумму элементов в каждом столбце.
- *  Определить, какой столбец содержит максимальную сумму.
+ * Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
  */
 
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercise9 {
+public class Exercise15 {
 
     private static int[][] matrix;
+    private static int max;
     private static int range = 100;
 
 
     public static void run() {
 
         matrix = initialize();
-        printMatrix();
-        findSumOfItemsInEachColumn();
+        System.out.println("Source matrix is: ");
+        printMatrix(matrix);
+        max = findMaxValue();
+        int[][] rep = replaceOddElementsWithMax();
+        System.out.println("Replaced matrix is: ");
+        printMatrix(rep);
 
     }
 
@@ -53,17 +56,14 @@ public class Exercise9 {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(range) + 1;
+                matrix[i][j] = random.nextInt(range + 1);
             }
         }
 
         return matrix;
-
     }
 
-    private static void printMatrix() {
-
-        System.out.println("Our matrix is: ");
+    private static void printMatrix(int[][] matrix) {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -74,27 +74,34 @@ public class Exercise9 {
 
     }
 
-    private static void findSumOfItemsInEachColumn() {
+    private static int findMaxValue() {
 
-        int maxColumn = 1;
-        int maxSum = 0;
-        int sum = 0;
-        for (int j = 0; j < matrix[0].length; j++) {
-            for (int i = 0; i < matrix.length; i++) {
-                sum += matrix[i][j];
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > max) {
+                    max = matrix[i][j];
+                }
             }
-            System.out.println("Sum of items in column #" + (j + 1) + ": " + sum);
-            if (sum > maxSum) {
-                maxSum = sum;
-                maxColumn = j + 1;
-            }
-            sum = 0;
         }
 
-        System.out.println("Column #" + maxColumn + " contains the maximum sum.");
-        System.out.println("------------------------");
+        System.out.println("Мax element of the original matrix is: " + max);
+
+        return max;
+    }
+
+    private static int[][] replaceOddElementsWithMax() {
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 != 0) {
+                    matrix[i][j] = max;
+                }
+            }
+        }
+        return matrix;
 
     }
 
-}
 
+}

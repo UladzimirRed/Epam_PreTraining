@@ -15,11 +15,13 @@ import java.util.Scanner;
 
 public class Exercise6 {
 
+    private static int[][] matrix;
+
+
     public static void run() {
 
-        int[][] matrix;
         matrix = initialize();
-        printMatrix(matrix);
+        printMatrix();
 
     }
 
@@ -32,12 +34,12 @@ public class Exercise6 {
 
         System.out.println("Enter matrix size (one even int number)");
 
-        while (!scanner.hasNextInt() || (n = scanner.nextInt()) % 2 != 0) {
+        while (!scanner.hasNextInt() || (n = scanner.nextInt()) % 2 != 0 || n <= 0) {
             scanner.nextLine();
-            System.out.println("Please enter EVEN INTEGER number");
+            System.out.println("Please enter EVEN POSITIVE INTEGER number");
         }
 
-        int[][] matrix = new int[n][n];
+        matrix = new int[n][n];
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -54,12 +56,12 @@ public class Exercise6 {
 
     }
 
-    private static void printMatrix(int[][] matrix) {
+    private static void printMatrix() {
 
         System.out.println("The result of the program: ");
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();

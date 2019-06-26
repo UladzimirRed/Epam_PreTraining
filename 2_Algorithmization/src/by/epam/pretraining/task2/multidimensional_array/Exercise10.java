@@ -2,52 +2,52 @@ package by.epam.pretraining.task2.multidimensional_array;
 
 
 /*
- * Дана квадратная матрица. Вывести на экран элементы, стоящие на диагонали.
+ * Найти положительные элементы главной диагонали квадратной матрицы.
  */
 
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercise2 {
+public class Exercise10 {
 
     private static int[][] matrix;
-    private static int range = 10;
 
 
     public static void run() {
 
         matrix = initialize();
         printMatrix();
-        printItemsDiagonally();
+        findPositiveElementsOfMatrix();
 
     }
 
     private static int[][] initialize() {
 
-        int m;
+        int n;
 
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter matrix size (one int number)");
 
-        while (!scanner.hasNextInt() || (m = scanner.nextInt()) <= 0) {
+        while (!scanner.hasNextInt() || (n = scanner.nextInt()) <= 0) {
             scanner.nextLine();
             System.out.println("Please enter POSITIVE INTEGER number");
         }
 
-        matrix = new int[m][m];
+        matrix = new int[n][n];
 
         Random random = new Random();
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(range + 1);
+                matrix[i][j] = random.nextInt(100 + 100 + 1) - 100;
             }
         }
 
         return matrix;
+
     }
 
     private static void printMatrix() {
@@ -63,18 +63,18 @@ public class Exercise2 {
 
     }
 
-    private static void printItemsDiagonally() {
+    private static void findPositiveElementsOfMatrix() {
 
-        System.out.print("Elements of the first diagonal: ");
+        System.out.print("Positive elements of the matrix: ");
+
         for (int i = 0; i < matrix.length; i++) {
-            System.out.print(matrix[i][i] + " ");
+            if (matrix[i][i] > 0) {
+                System.out.print(matrix[i][i] + " ");
+            }
         }
 
-        System.out.print("\nElements of the second diagonal: ");
-        for (int i = 0; i < matrix.length; i++) {
-            System.out.print(matrix[i][matrix.length - 1 - i] + " ");
-        }
         System.out.println("\n------------------------");
+
     }
 
 }

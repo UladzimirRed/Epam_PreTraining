@@ -12,12 +12,14 @@ import java.util.Scanner;
 
 public class Exercise7 {
 
+    private static double[][] matrix;
+
+
     public static void run() {
 
-        double[][] matrix;
         matrix = initialize();
-        printMatrix(matrix);
-        computePositiveNumberOfElements(matrix);
+        printMatrix();
+        computePositiveNumberOfElements();
 
     }
 
@@ -30,19 +32,16 @@ public class Exercise7 {
 
         System.out.println("Enter matrix size (one int number)");
 
-        while (!scanner.hasNextInt()) {
-            scanner.next();
-            System.out.println("Please enter INTEGER number");
+        while (!scanner.hasNextInt() || (n = scanner.nextInt()) <= 0) {
+            scanner.nextLine();
+            System.out.println("Please enter POSITIVE INTEGER number");
         }
 
-        n = scanner.nextInt();
-
-        double[][] matrix = new double[n][n];
+        matrix = new double[n][n];
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] =  Math.sin((i * i - j * j) / n);
-
+                matrix[i][j] = Math.sin((i * i - j * j) / n);
             }
         }
 
@@ -50,12 +49,12 @@ public class Exercise7 {
 
     }
 
-    private static void printMatrix(double[][] matrix) {
+    private static void printMatrix() {
 
         System.out.println("Our matrix is: ");
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();
@@ -63,7 +62,7 @@ public class Exercise7 {
 
     }
 
-    private static void computePositiveNumberOfElements(double[][] matrix) {
+    private static void computePositiveNumberOfElements() {
 
         int count = 0;
 
