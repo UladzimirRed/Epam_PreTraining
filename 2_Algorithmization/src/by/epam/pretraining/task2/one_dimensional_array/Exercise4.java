@@ -1,32 +1,32 @@
 package by.epam.pretraining.task2.one_dimensional_array;
 
+/*
+ * Даны действительные числа а1 ,а2 ,..., аn .
+ * Поменять местами наибольший и наименьший элементы.
+ */
+
 public class Exercise4 {
 
     public static void run(){
-
         int n = 5;
 
         replaceMinAndMaxElements(n);
         System.out.println();
-
     }
 
     private static void replaceMinAndMaxElements(int n){
-
         int [] array = new int [n];
+        int max = array [0];
+        int imax = 0;
+        int min = array [0];
+        int imin = 0 ;
 
         System.out.print("Array is: ");
 
         for (int i = 0; i < n; i++){
             array[i] = (int) (Math.random() * 100);
-
             System.out.print(array[i] + " ");
         }
-
-        int max = array [0];
-        int imax = 0;
-        int min = array [0];
-        int imin = 0 ;
 
         for (int i =1; i< n; i++ ) {
             if (array [i] > max) {
@@ -38,6 +38,7 @@ public class Exercise4 {
                 imin = i;
             }
         }
+
         array [imin] = max;
         array [imax] = min;
 
@@ -45,6 +46,5 @@ public class Exercise4 {
         for (int i = 0; i < n; i++){
             System.out.print(array[i] + " ");
         }
-
     }
 }

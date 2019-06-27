@@ -1,9 +1,12 @@
 package by.epam.pretraining.task1.linear;
 
+/*
+Найдите  значение функции: z = ( (a – 3 ) * b / 2) + c.
+ */
+
 public class Exercise1 {
 
     public static void run() {
-
         double a = 5;
         double b = 12;
         double c = 3;
@@ -12,7 +15,6 @@ public class Exercise1 {
     }
 
     private static double findValueOfFunction(double a, double b, double c) {
-
         return ((a - 3) * b / 2) + c;
     }
 }

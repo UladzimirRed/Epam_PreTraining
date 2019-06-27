@@ -1,9 +1,13 @@
 package by.epam.pretraining.task1.conditional;
 
+/*
+ * Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича.
+ * Определить, пройдет ли кирпич через отверстие.
+ */
+
 public class Exercise4 {
 
     public static void run() {
-
         int a = 130;
         int b = 70;
         int x = 250;
@@ -14,12 +18,6 @@ public class Exercise4 {
     }
 
     private static boolean isBrickSuitable(int a, int b, int x, int y, int z) {
-
-        boolean result = false;
-        if ((a > x || a > y) && (b > z)) {
-            result = true;
-        }
-
-        return result;
+        return ((a > x || a > y) && (b > z));
     }
 }

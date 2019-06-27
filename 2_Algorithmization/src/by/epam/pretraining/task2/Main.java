@@ -19,8 +19,8 @@ public class Main {
 //        by.epam.pretraining.task2.one_dimensional_array.Exercise6.run();
 //        System.out.println("Task 1.7 ");
 //        by.epam.pretraining.task2.one_dimensional_array.Exercise7.run();
-//        System.out.println("Task 1.8 ");
-//        by.epam.pretraining.task2.one_dimensional_array.Exercise8.run();
+        System.out.println("Task 1.8 ");
+        by.epam.pretraining.task2.one_dimensional_array.Exercise8.run();
 //        System.out.println("Task 1.9 ");
 //        by.epam.pretraining.task2.one_dimensional_array.Exercise9.run();
 //        System.out.println("Task 1.10 ");

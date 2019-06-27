@@ -1,12 +1,10 @@
 package by.epam.pretraining.task2.multidimensional_array;
 
-
 /*
  * Магическим квадратом порядка n называется квадратная матрица размера nxn,
  * составленная из чисел 1, 2, 3, ..., n^2. Построить магический квадрат
  * размером n*n.
  */
-
 
 import java.util.Scanner;
 
@@ -16,19 +14,14 @@ public class Exercise16 {
     private static int n;
 
     public static void run() {
-
         square = initialize();
         printMagicSquare(square);
-
     }
 
     private static int[][] initialize() {
-
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Enter matrix size (first int number)");
-
         while ((n = scanner.nextInt()) < 3) {
             scanner.nextLine();
             System.out.println("The magic square of order " + n + " doesn't exist. Specify another order.");
@@ -40,15 +33,14 @@ public class Exercise16 {
         } else {
             square = evenOddMagicSquare(n);
         }
-
         return square;
-
     }
 
     private static int[][] oddMagicSquare(int n) {
         int[][] square = new int[n][n];
         int i = 0;
         int j = (n - 1) / 2;
+
         square[i--][j++] = 1;
         for (int k = 2; k <= n * n; i--, j++, k++) {
             if (i < 0 && j > n - 1) {
@@ -82,7 +74,6 @@ public class Exercise16 {
                 k++;
             }
         }
-
         for (int i = 0; i < n; i += 4) {
             for (int j = 1; j < n; j += 4) {
                 square[i][j] = n * n + 1 - square[i][j];
@@ -106,11 +97,13 @@ public class Exercise16 {
     private static int[][] evenOddMagicSquare(int n) {
         int[][] square = new int[n][n];
         int[][] squareT = evenMagicSquare(n - 2);
+
         for (int i = 1; i < n - 1; i++) {
             for (int j = 1; j < n - 1; j++) {
                 square[i][j] = squareT[i - 1][j - 1] + 2 * (n - 1);
             }
         }
+
         int m = n / 2;
         int d = n * n + 1;
 
@@ -121,7 +114,10 @@ public class Exercise16 {
         square[n - 1][n - 1] = d - 3 * m + 1;
 
         //заполняем верхнюю строку
-        int i, j;
+        int i;
+        int j;
+
+        //заполняем верхнюю строку
         for (i = 1; i <= m - 2; i++) {
             square[0][i] = 2 * i + 1;
         }
@@ -153,20 +149,15 @@ public class Exercise16 {
         for (i = 1; i < n - 1; i++) {
             square[i][n - 1] = n * n + 1 - square[i][0];
         }
-
         return square;
-
     }
 
     private static void printMagicSquare(int[][] square) {
-
         for (int i = 0; i < square.length; i++) {
             for (int j = 0; j < square[i].length; j++) {
                 System.out.print(square[i][j] + "\t");
             }
             System.out.println();
         }
-
     }
-
 }
