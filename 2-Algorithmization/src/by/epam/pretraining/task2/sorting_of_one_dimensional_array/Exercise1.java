@@ -14,27 +14,27 @@ public class Exercise1 {
     private static int k = 6;
 
     public static void run() {
+        System.out.println("K = " + k);
         System.out.print("First array:");
         printArray(firstArray);
-        System.out.print("Second array:" );
+        System.out.print("Second array:");
         printArray(secondArray);
-        newArray = combineArraysAfterTheNumber(firstArray, secondArray, k);
         System.out.print("New array:");
-        printArray(newArray);
+        printArray(firstArray,secondArray);
     }
 
-    private static int[] combineArraysAfterTheNumber(int[] firstArray, int[] secondArray, int k) {
-        newArray = new int[firstArray.length + secondArray.length];
-        for (int i = 0; i < newArray.length; i++) {
-            if (i < k) {
-                newArray[i] = firstArray[i];
-            } else if (i < k + secondArray.length) {
-                newArray[i] = secondArray[i - k];
-            } else {
-                newArray[i] = firstArray[i - k + 1];
-            }
+    private static void printArray(int[] firstArray, int[] secondArray) {
+        System.out.print("{ ");
+        for (int i = 0; i < k; i++) {
+            System.out.print(firstArray[i] + " ");
         }
-        return newArray;
+        for (int i = 0; i < secondArray.length; i++) {
+            System.out.print(secondArray[i] + " ");
+        }
+        for (int i = k; i < firstArray.length; i++) {
+            System.out.print(firstArray[i] + " ");
+        }
+        System.out.println("} ");
     }
 
     private static void printArray(int[] array) {

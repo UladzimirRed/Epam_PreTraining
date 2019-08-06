@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        System.out.println("One-dimensional arrays:");
+        System.out.println("One-dimensional arrays:");
 //        System.out.print("Task 1.1: ");
 //        by.epam.pretraining.task2.one_dimensional_array.exercise1.run();
 //        System.out.println("Task 1.2: ");
@@ -26,7 +26,7 @@ public class Main {
 //        System.out.println("Task 1.10 ");
 //        by.epam.pretraining.task2.one_dimensional_array.exercise10.run();
 
-//        System.out.println("Multidimensional arrays:");
+        System.out.println("Multidimensional arrays:");
 //        System.out.println("Task 2.1 ");
 //        by.epam.pretraining.task2.multidimensional_array.exercise1.run();
 //        System.out.println("Task 2.2 ");
@@ -60,45 +60,45 @@ public class Main {
 //        System.out.println("Task 2.16 ");
 //        by.epam.pretraining.task2.multidimensional_array.Exercise16.run();
 
-//        System.out.println("Sorting of one-dimensional arrays:");
-//     need to correction (about k)   System.out.println("Task 3.1 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise1.run();
+        System.out.println("Sorting of one-dimensional arrays:");
+//        System.out.println("Task 3.1 ");
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise1.run();
 //        System.out.println("Task 3.2 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise2.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise2.run();
 //        System.out.println("Task 3.3 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise3.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise3.run();
 //        System.out.println("Task 3.4 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise4.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise4.run();
 //        System.out.println("Task 3.5 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise5.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise5.run();
 //        System.out.println("Task 3.6 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise6.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise6.run();
 //        System.out.println("Task 3.7 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise7.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise7.run();
 //        System.out.println("Task 3.8 ");
-//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.exercise8.run();
+//        by.epam.pretraining.task2.sorting_of_one_dimensional_array.Exercise8.run();
 
         System.out.println("Decomposition using methods:");
 //        System.out.println("Task 4.1 ");
-//        by.epam.pretraining.task2.decomposition.exercise1.run();
+//        by.epam.pretraining.task2.decomposition.Exercise1.run();
 //        System.out.println("Task 4.2 ");
-//        by.epam.pretraining.task2.decomposition.exercise2.run();
+//        by.epam.pretraining.task2.decomposition.Exercise2.run();
 //        System.out.println("Task 4.3 ");
-//        by.epam.pretraining.task2.decomposition.exercise3.run();
+//        by.epam.pretraining.task2.decomposition.Exercise3.run();
 //        System.out.println("Task 4.4 ");
-//        by.epam.pretraining.task2.decomposition.exercise4.run();
+//        by.epam.pretraining.task2.decomposition.Exercise4.run();
 //        System.out.println("Task 4.5 ");
-//        by.epam.pretraining.task2.decomposition.exercise5.run();
+//        by.epam.pretraining.task2.decomposition.Exercise5.run();
 //        System.out.println("Task 4.6 ");
-//        by.epam.pretraining.task2.decomposition.exercise6.run();
+//        by.epam.pretraining.task2.decomposition.Exercise6.run();
 //        System.out.println("Task 4.7 ");
-//        by.epam.pretraining.task2.decomposition.exercise7.run();
+//        by.epam.pretraining.task2.decomposition.Exercise7.run();
 //        System.out.println("Task 4.8 ");
-//        by.epam.pretraining.task2.decomposition.exercise8.run();
+//        by.epam.pretraining.task2.decomposition.Exercise8.run();
 //        System.out.println("Task 4.9 ");
-//        by.epam.pretraining.task2.decomposition.exercise9.run();
+//        by.epam.pretraining.task2.decomposition.Exercise9.run();
 //        System.out.println("Task 4.10 ");
-//        by.epam.pretraining.task2.decomposition.exercise10.run();
+//        by.epam.pretraining.task2.decomposition.Exercise10.run();
 //        System.out.println("Task 4.11 ");
 //        by.epam.pretraining.task2.decomposition.Exercise11.run();
 //        System.out.println("Task 4.12 ");
@@ -111,7 +111,7 @@ public class Main {
 //        by.epam.pretraining.task2.decomposition.Exercise15.run();
 //        System.out.println("Task 4.16");
 //        by.epam.pretraining.task2.decomposition.Exercise16.run();
-        System.out.println("Task 4.17");
-        by.epam.pretraining.task2.decomposition.Exercise17.run();
+//        System.out.println("Task 4.17");
+//        by.epam.pretraining.task2.decomposition.Exercise17.run();
     }
 }

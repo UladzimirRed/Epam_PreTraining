@@ -1,12 +1,12 @@
 package by.epam.pretraining.task4.simplest_classes_and_objects.exercise7;
 
-import static by.epam.pretraining.task4.simplest_classes_and_objects.exercise7.Point.findDistance;
-
 /**
  * Описать класс, представляющий треугольник.
  * Предусмотреть методы для создания объектов, вычисления
  * площади, периметра и точки пересечения медиан.
  */
+
+import static by.epam.pretraining.task4.simplest_classes_and_objects.exercise7.Point.findDistance;
 
 public class Triangle {
     Point pointA;

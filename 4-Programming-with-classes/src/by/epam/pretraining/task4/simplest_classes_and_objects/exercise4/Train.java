@@ -1,9 +1,5 @@
 package by.epam.pretraining.task4.simplest_classes_and_objects.exercise4;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.text.ParseException;
-
 /**
  * Создайте класс Train, содержащий поля: название пункта назначения, номер
  * поезда, время отправления. Создайте данные в массив из пяти элементов типа
@@ -13,6 +9,10 @@ import java.text.ParseException;
  * чем поезда с одинаковыми пунктами назначения должны быть упорядочены по вре-
  * мени отправления.
  */
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
 
 public class Train {
     private String destination;
