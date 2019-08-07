@@ -86,7 +86,7 @@ public class Tour {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("ID: %d,\t name: %s,\t destination: %s,\t purpose: %s,\t transport: %s,\t food: %s,\t" +
                 " duration: %d,\t price: %.2f", id, name, description, purpose, transport, food, duration.getDays(), price);
     }

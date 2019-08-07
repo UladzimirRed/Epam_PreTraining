@@ -4,4 +4,4 @@ public enum Transport {
     PLANE,
     TRAIN,
     SHIP
-    }
+}

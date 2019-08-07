@@ -3,49 +3,49 @@ package by.epam.pretraining.task4.aggregation_and_composition.exercise5.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Agency{
-        private String name;
-        private List<Tour> tours;
-        private List<Client> clients;
-        private List<Order> orders;
+public class Agency {
+    private String name;
+    private List<Tour> tours;
+    private List<Client> clients;
+    private List<Order> orders;
 
-        public Agency(String name) {
-            this.name = name;
-            tours = new ArrayList<>();
-            clients = new ArrayList<>();
-            orders = new ArrayList<>();
-        }
+    public Agency(String name) {
+        this.name = name;
+        tours = new ArrayList<>();
+        clients = new ArrayList<>();
+        orders = new ArrayList<>();
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public List<Tour> getTours() {
-            return tours;
-        }
+    public List<Tour> getTours() {
+        return tours;
+    }
 
-        public List<Client> getClients() {
-            return clients;
-        }
+    public List<Client> getClients() {
+        return clients;
+    }
 
-        public List<Order> getOrders() {
-            return orders;
-        }
+    public List<Order> getOrders() {
+        return orders;
+    }
 
-        public boolean addOrder(Order order){
-            return orders.add(order);
-        }
+    public boolean addOrder(Order order) {
+        return orders.add(order);
+    }
 
-        public boolean addTour(Tour tour){
-            return tours.add(tour);
-        }
+    public boolean addTour(Tour tour) {
+        return tours.add(tour);
+    }
 
-        public boolean addClient(Client client){
-            return clients.add(client);
-        }
+    public boolean addClient(Client client) {
+        return clients.add(client);
+    }
 
-        @Override
-        public String toString() {
-            return "Agency \"" + name + '\"';
-        }
+    @Override
+    public String toString() {
+        return "Agency \"" + name + '\"';
+    }
 }

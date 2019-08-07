@@ -31,9 +31,9 @@ public class TourHandler {
         }
     }
 
-    public static void printTours(List<Tour> tours){
+    public static void printTours(List<Tour> tours) {
 
-        for (Tour tour : tours){
+        for (Tour tour : tours) {
             System.out.println(tour);
         }
     }
