@@ -1,4 +1,4 @@
-package by.epam.pretraining.entity;
+package by.epam.pretraining.task5.exercise4.entity;
 
 import java.util.ArrayList;
 

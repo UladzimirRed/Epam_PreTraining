@@ -1,4 +1,4 @@
-package by.epam.pretraining.controller;
+package by.epam.pretraining.task5.exercise4.controller;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
-package by.epam.pretraining.controller;
+package by.epam.pretraining.task5.exercise4.controller;
 
-import by.epam.pretraining.entity.Cavern;
-import by.epam.pretraining.entity.Gold;
+import by.epam.pretraining.task5.exercise4.entity.Cavern;
+import by.epam.pretraining.task5.exercise4.entity.Gold;
 
 import java.util.ArrayList;
 
