@@ -3,9 +3,9 @@ package entity;
 public class Book {
     private String title;
     private String author;
-    private BookType bookType;
+    private String bookType;
 
-    public Book(String title, String author, BookType bookType) {
+    public Book(String title, String author, String bookType) {
         this.title = title;
         this.author = author;
         this.bookType = bookType;
@@ -27,11 +27,11 @@ public class Book {
         this.author = author;
     }
 
-    public BookType getBookType() {
+    public String getBookType() {
         return bookType;
     }
 
-    public void setBookType(BookType bookType) {
+    public void setBookType(String bookType) {
         this.bookType = bookType;
     }
 
@@ -40,7 +40,7 @@ public class Book {
         return "Book{" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", bookType=" + bookType.getType() +
+                ", bookType=" + bookType +
                 '}';
     }
 }

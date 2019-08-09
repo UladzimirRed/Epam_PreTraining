@@ -45,7 +45,7 @@ public class Catalog {
             if (book.getTitle().equalsIgnoreCase(criteria)) {
                 bookByCriteria.add(book);
             }
-            if (book.getBookType().getType().equalsIgnoreCase(criteria)) {
+            if (book.getBookType().equalsIgnoreCase(criteria)) {
                 bookByCriteria.add(book);
             }
         }

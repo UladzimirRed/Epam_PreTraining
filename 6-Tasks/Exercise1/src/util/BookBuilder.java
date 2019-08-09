@@ -13,11 +13,11 @@ public class BookBuilder {
         }
 
         String[] elements = line.split(DELIMITER);
-        BookType type = EnumExtractor.findBookType(elements[2]);
+        BookType type = BookEnumExtractor.findBookType(elements[2]);
 
         if (type == null) {
             return null;
         }
-        return new Book(elements[0], elements[1], type);
+        return new Book(elements[0], elements[1], elements[2]);
     }
 }
