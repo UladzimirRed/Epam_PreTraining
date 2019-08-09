@@ -1,9 +1,7 @@
 package util;
 
-import entity.Book;
 import entity.User;
 import exception.FileReadingException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

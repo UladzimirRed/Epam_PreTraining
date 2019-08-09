@@ -1,7 +1,6 @@
 package util;
 
 import entity.Book;
-
 import java.util.List;
 
 public class Printer {

@@ -2,7 +2,6 @@ package controller;
 
 import entity.Role;
 import entity.User;
-
 import java.util.ArrayList;
 import java.util.List;
 

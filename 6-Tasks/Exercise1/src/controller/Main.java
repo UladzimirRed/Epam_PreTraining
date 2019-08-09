@@ -6,10 +6,6 @@ import entity.User;
 import util.BookFileReader;
 import util.PasswordEncoder;
 import util.UserFileReader;
-
-import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,43 +22,6 @@ public class Main {
         List<Book> books = fileReader.read(FILE_PATH);
 
         catalog.addBooks(books);
-//        printBooks(catalog.getBooks());
-//        System.out.println();
-//        printBooks(catalog.findBooks("E_Book"));
-//        System.out.println();
-//        printBooks(catalog.findBooks("Булгаков"));
-
-
-//        System.out.println();
-//        String str = "user1";
-//        System.out.println(str);
-//        System.out.println();
-//        String encoded = PasswordEncoder.encode(str);
-//        System.out.println(encoded);
-//        System.out.println();
-//        String decoded = PasswordEncoder.decode(encoded);
-//        System.out.println(decoded);
-        String str2 = "YWRtaW4x";
-        System.out.println(str2);
-        String encoded2 = PasswordEncoder.decode(str2);
-        System.out.println(encoded2);
-
-//        User admin = new User("Admin", "12345", Role.ADMIN);
-//        User user1 = new User("User", "12345", Role.USER);
-
-//        userData.add(admin);
-//        userData.add(user1);
-
-//        String userName = "Admin";
-//        String password = "her";
-
-//        User adm = userData.findUser(userName);
-//        System.out.println(adm);
-
-//        String encodedPass = PasswordEncoder.encode(password);
-//        if (adm.getPassword().equals(encodedPass)) {
-//            System.out.println("welcome");
-
 
         UserData userData = UserData.getInstance();
         UserFileReader userFileReader = new UserFileReader();
@@ -151,45 +110,3 @@ public class Main {
     }
 
 }
-
-//        while (isExecute) {
-//            System.out.println("What should be done? \n" +
-//                    "1. Show the whole cave - 1 \n" +
-//                    "2. Sort the cavern by gold - 2 \n" +
-//                    "3. Get the most expensive gold - 3 \n" +
-//                    "4. Get gold in the amount of - 4 \n" +
-//                    "5. Leave the cavern - 5");
-//
-//            while (!scanner.hasNextByte()) {
-//                scanner.next();
-//                System.out.println("Enter integer number");
-//            }
-//            byte choice = scanner.nextByte();
-//            switch (choice) {
-//                case 1:
-//                    controller.printGold();
-//                    break;
-//                case 2:
-//                    controller.sortByCost();
-//                    controller.printGold();
-//                    break;
-//                case 3:
-//                    controller.getMostExpensiveGold();
-//                    break;
-//                case 4:
-//                    System.out.println("Enter the required sum: ");
-//                    while (!scanner.hasNextInt()) {
-//                        scanner.next();
-//                        System.out.println("Enter integer");
-//                    }
-//                    int sum = scanner.nextInt();
-//                    controller.getGoldBySum(sum);
-//                    break;
-//                case 5:
-//                    isExecute = false;
-//                    System.out.println("See you later");
-//                    break;
-//                default:
-//                    System.out.println("Wrong command!!!\n");
-//            }
-

@@ -1,6 +1,5 @@
 package util;
 
-import java.util.Arrays;
 import java.util.Base64;
 
 public class PasswordEncoder {
