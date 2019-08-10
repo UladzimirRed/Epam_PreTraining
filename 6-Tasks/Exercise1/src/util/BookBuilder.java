@@ -18,6 +18,6 @@ public class BookBuilder {
         if (type == null) {
             return null;
         }
-        return new Book(elements[0], elements[1], elements[2]);
+        return new Book(elements[0], elements[1], type);
     }
 }

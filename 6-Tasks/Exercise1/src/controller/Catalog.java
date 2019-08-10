@@ -44,10 +44,18 @@ public class Catalog {
             if (book.getTitle().equalsIgnoreCase(criteria)) {
                 bookByCriteria.add(book);
             }
-            if (book.getBookType().equalsIgnoreCase(criteria)) {
+            if (book.getBookType().getType().equalsIgnoreCase(criteria)) {
                 bookByCriteria.add(book);
             }
         }
         return bookByCriteria;
+    }
+
+    public Book findByAuthorAndTitle(String author, String title) {
+        for (Book book : books) {
+            if (book.getAuthor().equalsIgnoreCase(author) && book.getTitle().equalsIgnoreCase(title)) {
+                return book;
+            }
+        }return null;
     }
 }
