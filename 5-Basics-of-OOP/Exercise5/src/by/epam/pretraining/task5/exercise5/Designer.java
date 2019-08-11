@@ -1,7 +1,5 @@
 package by.epam.pretraining.task5.exercise5;
 
-import java.util.Objects;
-
 public class Designer {
     private String sweetness;
     private String packing;

@@ -14,7 +14,6 @@ public class BookFileReader {
         if (pathToFile == null) {
             throw new FileReadingException("Null path to file in read method");
         }
-
         File file = new File(pathToFile);
         List<Book> books = new ArrayList<>();
         try {

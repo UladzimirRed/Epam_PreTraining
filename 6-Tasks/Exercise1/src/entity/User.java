@@ -38,9 +38,9 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
+                "Your name='" + name + '\'' +
+                ", Your password='" + password + '\'' +
+                ", Your type of access=" + role +
                 '}';
     }
 }

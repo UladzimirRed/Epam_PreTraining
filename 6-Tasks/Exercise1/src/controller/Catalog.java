@@ -34,7 +34,6 @@ public class Catalog {
         books.remove(book);
     }
 
-
     public List<Book> findBooks(String criteria) {
         List<Book> bookByCriteria = new ArrayList<>();
         for (Book book : books) {

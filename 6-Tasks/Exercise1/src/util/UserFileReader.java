@@ -13,7 +13,6 @@ public class UserFileReader {
         if (pathToFile == null) {
             throw new FileReadingException("Null path to file in read method");
         }
-
         File file = new File(pathToFile);
         List<User> clients = new ArrayList<>();
         try {

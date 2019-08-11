@@ -7,14 +7,11 @@ public class UserBuilder {
     private static final String DELIMITER = ";\\s*";
 
     public static User buildUser(String line) {
-
         if (!UserValidator.validate(line)) {
             return null;
         }
-
         String[] elements = line.split(DELIMITER);
         Role role = UserEnumExtractor.findUserRole(elements[2]);
-
         if (role == null) {
             return null;
         }

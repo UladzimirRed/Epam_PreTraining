@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * Создать консольное приложение "Учёт книг в домашней библиотеке".
+ */
+
 import entity.Book;
 import entity.BookType;
 import entity.Role;
@@ -7,7 +11,6 @@ import entity.User;
 import util.BookFileReader;
 import util.PasswordEncoder;
 import util.UserFileReader;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -32,6 +35,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String userName = null;
         User user = null;
+
         while (user == null) {
             System.out.println("Enter your login");
             userName = scanner.nextLine();
@@ -58,7 +62,7 @@ public class Main {
                 byte choice = scanner.nextByte();
                 switch (choice) {
                     case 1:
-                        System.out.println("Enter keyword");
+                        System.out.println("Enter the search keyword");
                         Scanner criteriaScan = new Scanner(System.in);
                         String criteria = criteriaScan.nextLine();
                         printBooks(catalog.findBooks(criteria));
@@ -74,12 +78,11 @@ public class Main {
                         break;
                     case 3:
                         isExecute = false;
-                        System.out.println("Teaching is light, ignorance - darkness. Bye Bye");
+                        System.out.println("Teaching is light, ignorance - darkness. Bye Bye!");
                         break;
                     case 4:
                         if (!user.getRole().equals(Role.ADMIN)) {
-                            System.out.println("Ты чо ахуел, не для тебя функционал, мародер вонючий. Пидор. Щегол блять.");
-                            System.out.println();
+                            System.out.println("You do not have administrator privileges. Make the right choice");
                             printMenu(user.getRole());
                             break;
                         }
@@ -93,7 +96,7 @@ public class Main {
                                 "e book- 2 \n");
                         int type = 0;
                         while (!scanner.hasNextByte() && (type = scanner.nextByte()) != 1 && (type = scanner.nextByte()) != 2) {
-                            scanner.nextLine();
+                            scanner.next();
                             System.out.println("Enter integer number");
                         }
                         scanner.nextLine();
@@ -110,8 +113,7 @@ public class Main {
                         break;
                     case 5:
                         if (!user.getRole().equals(Role.ADMIN)) {
-                            System.out.println("Ты чо ахуел, не для тебя функционал, мародер вонючий. Пидор. Щегол блять.");
-                            System.out.println();
+                            System.out.println("You do not have administrator privileges. Make the right choice");
                             printMenu(user.getRole());
                             break;
                         }
@@ -132,7 +134,6 @@ public class Main {
                         break;
                     default:
                         System.out.println("Wrong command!!!\n");
-                        System.out.println();
                         printMenu(user.getRole());
                 }
             }
@@ -152,6 +153,4 @@ public class Main {
                     "4. Add book - 4 \n" + "5. Remove book - 5");
         }
     }
-
-
 }
